@@ -4,11 +4,11 @@ import App from "./App.vue";
 
 import "./plugins/axios";
 
-// import router from "./router";
+import router from "./router";
 
 Vue.config.productionTip = false;
 
 new Vue({
+  router,
   render: h => h(App)
-  // router
 }).$mount("#app");
