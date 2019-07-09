@@ -9,20 +9,20 @@
       <div v-show="mostrarSlide === true" class="slide slide-1">
         <h2>Atualmente você quer:</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-radio-group v-model="radios" :mandatory="false">
-          <v-radio @click="nextSlide" name="Radio 1" label="Radio 1" value="radio-1"></v-radio>
-          <v-radio @click="nextSlide" name="Radio 2" label="Radio 2" value="radio-2"></v-radio>
+        <v-radio-group v-model="radios" @click="nextSlide" :mandatory="false">
+          <v-radio label="Radio 1" value="radio-1"></v-radio>
+          <v-radio label="Radio 2" value="radio-2"></v-radio>
         </v-radio-group>
       </div>
       <!-- SLIDE 2 -->
       <div v-show="mostrarSlide2  === true" class="slide slide-2">
         <h2>Em qual dessas áreas você atual?</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-radio-group v-model="radios2" :mandatory="false">
-          <v-radio @click="nextSlide2" label="Radio 3" value="radio-3"></v-radio>
-          <v-radio @click="nextSlide2" label="Radio 4" value="radio-4"></v-radio>
-          <v-radio @click="nextSlide2" label="Radio 5" value="radio-5"></v-radio>
-          <v-radio @click="nextSlide2" label="Radio 6" value="radio-6"></v-radio>
+        <v-radio-group v-model="radios2" @click="nextSlide2" :mandatory="false">
+          <v-radio label="Radio 3" value="radio-3"></v-radio>
+          <v-radio label="Radio 4" value="radio-4"></v-radio>
+          <v-radio label="Radio 5" value="radio-5"></v-radio>
+          <v-radio label="Radio 6" value="radio-6"></v-radio>
         </v-radio-group>
       </div>
       <!-- SLIDE 3 - MultiSelect -->
@@ -57,9 +57,16 @@
 
     <!-- form para dados do user -->
     <v-form v-show="mostrarForm  === true" v-model="valid">
-      <v-layout>
+      <v-layout xs12 md4>
         <v-flex xs12 md4>
-          <v-text-field v-model="firstname" :rules="nameRules" :counter="10" label="Nome" required></v-text-field>
+          <v-text-field
+            v-model="firstname"
+            :rules="nameRules"
+            :counter="10"
+            label="Nome"
+            type="name"
+            required
+          ></v-text-field>
         </v-flex>
 
         <v-flex xs12 md4>
@@ -86,7 +93,7 @@
         </v-flex>
 
         <v-flex xs12 md4>
-          <v-btn>Enviar</v-btn>
+          <v-btn @click="cadastrar">Enviar</v-btn>
         </v-flex>
       </v-layout>
     </v-form>
@@ -94,15 +101,16 @@
 </template>
 
 <script>
+import { setTimeout } from "timers";
 export default {
   data() {
     return {
       // Qualificar lead
       mostrarFormLead: true,
       mostrarSlide: true,
-      radios: null,
+      radios: "",
       mostrarSlide2: false,
-      radios2: null,
+      radios2: "",
       mostrarSlide3: false,
       selected: [],
       mostrarSlide4: false,
@@ -142,6 +150,20 @@ export default {
     nextSlide4() {
       this.mostrarFormLead = false;
       this.mostrarForm = true;
+    },
+    cadastrar() {
+      console.log(this.radios);
+      console.log(this.radios2);
+      console.log(this.selected);
+      console.log(this.pickerDate);
+      console.log(this.pickerHour);
+      console.log(this.firstname);
+      console.log(this.email);
+
+      // this.$http.put("leads.json", { name, email }).then(() => {
+      //   // eslint-disable-next-line
+      //   console.log("dados enviados");
+      // });
     }
   }
 };
