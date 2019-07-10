@@ -9,12 +9,8 @@
 </template>
 
 <script>
-// import mentorForm from "./form/mentorForm";
-
 export default {
-  name: "home",
-  // components: { mentorForm },
-  props: {}
+  name: "home"
 };
 </script>
 
