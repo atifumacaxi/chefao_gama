@@ -15,7 +15,7 @@
         </v-radio-group>
       </div>
       <!-- SLIDE 2 -->
-      <div v-show="mostrarSlide2  === true" class="slide slide-2">
+      <div v-show="mostrarSlide2  === true" class="slide slide-2 layout-slides">
         <h2>Em qual dessas áreas você atual?</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
         <v-radio-group v-model="whatArea" @click="nextSlide2" :mandatory="false">

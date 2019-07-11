@@ -17,23 +17,22 @@ export default {
 
 
 <style scoped>
-
-
-@media (max-width:500px) {
+@media (max-width: 500px) {
   #home {
     padding-right: 10px;
     padding-left: 10px;
     flex-direction: column;
     width: 100%;
-    height: 600px;
+    /*height: 600px;*/
     justify-content: space-evenly;
     background-image: url("imgs/bg-min.png");
     background-position: center;
     background-repeat: no-repeat;
   }
-  h1, h2 {
-  color: white;
-  font-variant-caps: all-petite-caps;
+  h1,
+  h2 {
+    color: white;
+    font-variant-caps: all-petite-caps;
   }
   h1 {
     font-family: lato;
@@ -48,12 +47,7 @@ export default {
   .btn {
     font-family: lato;
     color: white;
-    background-color: #D9471A;
+    background-color: #d9471a;
   }
-
 }
-
-
-
-  
 </style>

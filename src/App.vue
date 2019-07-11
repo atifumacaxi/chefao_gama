@@ -47,7 +47,7 @@ export default {
 .main-container-render,
 .main-container,
 .main {
-  height: 100%;
+  height: 600px;
   width: 100%;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
