@@ -2,11 +2,11 @@
   <!-- tela com os slides do campo de cadastro. Todos os slides ficaram aqui, inclusive o form.
   para facilitar quando formos usar as informações preenchidas pelo user-->
 
-  <v-container fluid>
+  <v-container class="background" fluid>
     <!-- form para selecionar qualificar lead -->
     <v-form v-show="mostrarFormLead === true">
       <!-- SLIDE 1 -->
-      <div v-show="mostrarSlide === true" class="slide slide-1">
+      <div v-show="mostrarSlide === true" class="slide slide-1 layout-slides">
         <h2>Atualmente você quer:</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
         <v-radio-group v-model="choose" @click="nextSlide" :mandatory="false">
@@ -189,5 +189,8 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background-image: linear-gradient(#005778, #0798d1);
+}
 /* .class= "rad"; */
 </style>

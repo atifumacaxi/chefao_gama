@@ -204,6 +204,12 @@ li {
   border-radius: 4px;
 }
 
+.layout-slides {
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+}
+
 /* EXEMPLO DE ANIMAÇÕES, CASO FOR USARMOS */
 @keyframes slide-in {
   from {
