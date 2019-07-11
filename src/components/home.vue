@@ -28,7 +28,7 @@ export default {
     height: 600px;
     justify-content: space-evenly;
     background-image: url("imgs/bg-min.png");
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
   }
   h1, h2 {
