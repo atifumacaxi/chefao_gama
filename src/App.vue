@@ -207,7 +207,9 @@ li {
 .btn {
   /* Não deixei as cores das bordas setadas porque variam */
   margin-top: 30px;
-  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
   border-radius: 4px;
 }
 
