@@ -1,19 +1,19 @@
 <template>
   <v-container fluid>
     <!-- card de cadastro -->
-    <v-layout v-show="success === true">
+    <v-layout class="layout-slides card" v-show="success === true">
       <h2>CADASTRO REALIZADO COM SUCESSO!</h2>
       <p>Fique atento ao seu e-mail. Em até 30 minutos você receberá detalhes da sua mentoria.</p>
-      <v-btn @click="nextSlide">Ok</v-btn>
+      <v-btn class="btn lar" @click="nextSlide">Ok</v-btn>
     </v-layout>
     <!-- notificação de sugestão de mentor -->
-    <v-layout v-show="suggestion === true">
+    <v-layout class="layout-slides" v-show="suggestion === true">
       <img src alt="Fogos de artificio para comemoração" />
       <h2>Encontramos o mentor ideal para você!</h2>
-      <v-btn @click="searchMentor">VER AGORA!</v-btn>
+      <v-btn class="btn lar" @click="searchMentor">VER AGORA!</v-btn>
     </v-layout>
     <!-- mentor -->
-    <v-layout v-show="mentorSuggestion === true">
+    <v-layout class="layout-slides" v-show="mentorSuggestion === true">
       <div>
         <img :src="mentor.photo" :alt="`mentor sugerido: ${mentor.name}`" />
         <div>
@@ -28,7 +28,7 @@
           <p>{{ mentor.description}}</p>
         </div>
       </div>
-      <v-btn @click="match">QUERO RESERVAR!</v-btn>
+      <v-btn class="btn lar" @click="match">QUERO RESERVAR!</v-btn>
     </v-layout>
   </v-container>
 </template>
@@ -75,4 +75,12 @@ export default {
 </script>
 
 <style>
+.lar {
+  max-width: 290px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
 </style>
