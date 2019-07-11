@@ -37,8 +37,18 @@ export default {
   }
   h1 {
     font-family: lato;
-  font-size: 3em;
-  text-shadow: #999999 1px 1px 4px;
+    font-weight: 500;
+    font-size: 3em;
+    text-shadow: #999999 1px 1px 4px;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .btn {
+    font-family: lato;
+    color: white;
+    background-color: #D9471A;
   }
 
 }
