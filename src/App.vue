@@ -2,9 +2,9 @@
   <v-app>
     <Header />
     <v-content class="main">
-      <v-container class="main-container">
+      <div class="main-container">
         <router-view class="main-container-render"></router-view>
-      </v-container>
+      </div>
     </v-content>
   </v-app>
 </template>
@@ -44,6 +44,12 @@ export default {
   align-items: center;
 }
 
+.main-container-render,
+.main-container,
+.main {
+  height: 100%;
+  width: 100%;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -200,14 +206,23 @@ li {
 /* class para ser aplicada em botões  */
 .btn {
   /* Não deixei as cores das bordas setadas porque variam */
+  margin-top: 30px;
   height: 60px;
   border-radius: 4px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  color: #005778;
+  margin-bottom: 25px;
 }
 
 .layout-slides {
   background: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
+  padding: 6%;
 }
 
 /* EXEMPLO DE ANIMAÇÕES, CASO FOR USARMOS */
