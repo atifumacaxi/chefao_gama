@@ -77,10 +77,14 @@ export default {
 <style>
 .lar {
   max-width: 290px;
+  background: #0378a6 !important;
+  color: #fff !important;
+  border: 1px solid #707070;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 </style>

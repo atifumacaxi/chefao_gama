@@ -212,7 +212,8 @@ li {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 600;
   color: #005778;
   margin-bottom: 25px;
 }
