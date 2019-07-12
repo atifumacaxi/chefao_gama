@@ -72,4 +72,10 @@ export default {};
   display: block;
   text-align: right !important;
 }
+
+@media (min-width: 768px) {
+  .text-xs-center {
+    background-image: url("imgs/logo_desktop.jpg");
+  }
+}
 </style>

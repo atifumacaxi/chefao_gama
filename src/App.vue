@@ -238,7 +238,7 @@ h2 {
 
 @media (min-width: 768px) {
   h2 {
-    font-size: 48px;
+    font-size: 2.5rem !important;
     font-weight: initial;
   }
 
@@ -246,11 +246,10 @@ h2 {
     font-size: 30px;
   }
 
-  .layout-slides {
-    padding: 58px;
-    margin-right: 14.5%;
-    margin-left: 14.5%;
-    width: auto;
+  h1 {
+    font-family: arial !important;
+    font-size: 5rem !important;
+    font-weight: 500 !important;
   }
 }
 

@@ -15,8 +15,10 @@
         </v-radio-group>-->
 
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-btn class="btn_slide1" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
-        <v-btn class="btn_slide1" @click="nextSlide">mudar de área de atuação</v-btn>
+        <div class="items_inside">
+          <v-btn class="btn_slide1" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
+          <v-btn class="btn_slide1" @click="nextSlide">mudar de área de atuação</v-btn>
+        </div>
       </div>
       <!-- SLIDE 2 -->
       <div v-show="mostrarSlide2  === true" class="slide slide-2 layout-slides">
@@ -28,10 +30,12 @@
           <v-radio label="Radio 5" value="radio-5"></v-radio>
           <v-radio label="Radio 6" value="radio-6"></v-radio>
         </v-radio-group>-->
-        <v-btn class="btn_slide2" @click="nextSlide2">Exatas</v-btn>
-        <v-btn class="btn_slide2" @click="nextSlide2">Humanas</v-btn>
-        <v-btn class="btn_slide2" @click="nextSlide2">Biológicas</v-btn>
-        <v-btn class="btn_slide2" @click="nextSlide2">Tecnologia</v-btn>
+        <div class="items_inside">
+          <v-btn class="btn_slide2" @click="nextSlide2">Exatas</v-btn>
+          <v-btn class="btn_slide2" @click="nextSlide2">Humanas</v-btn>
+          <v-btn class="btn_slide2" @click="nextSlide2">Biológicas</v-btn>
+          <v-btn class="btn_slide2" @click="nextSlide2">Tecnologia</v-btn>
+        </div>
       </div>
       <!-- SLIDE 3 - MultiSelect -->
       <div v-show="mostrarSlide3  === true" class="slide slide-3 layout-slides">
@@ -272,6 +276,27 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 768px) {
+  .background {
+    max-width: 2000px !important;
+    height: max-content;
+  }
+  .items_inside {
+    flex-direction: row !important;
+    justify-content: center;
+  }
+  .layout-slides {
+    margin-top: 180px;
+    width: 1150px;
+    justify-content: center;
+  }
+  .btn_slide1 {
+    width: 450px;
+    height: 65px;
+    font-size: 20px;
+  }
+}
+
 .background {
   background-image: linear-gradient(#005778, #0798d1);
 }
@@ -280,6 +305,10 @@ export default {
   margin: 30px 15px;
   background-color: #0378a6 !important;
   color: white;
+}
+.items_inside {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn_slide2 {
