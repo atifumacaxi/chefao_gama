@@ -8,35 +8,53 @@
       <!-- SLIDE 1 -->
       <div v-show="mostrarSlide === true" class="slide slide-1 layout-slides">
         <h2>Atualmente você deseja:</h2>
+
+        <!--   <v-radio-group v-model="choose" @click="nextSlide" :mandatory="false">
+          <v-radio label="Radio 1" value="radio-1"></v-radio>
+          <v-radio label="Radio 2" value="radio-2"></v-radio>
+        </v-radio-group>-->
+
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-btn class="btn_slides" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
-        <v-btn class="btn_slides" @click="nextSlide">mudar de área de atuação</v-btn>
+        <v-btn class="btn_slide1" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
+        <v-btn class="btn_slide1" @click="nextSlide">mudar de área de atuação</v-btn>
       </div>
       <!-- SLIDE 2 -->
       <div v-show="mostrarSlide2  === true" class="slide slide-2 layout-slides">
-        <h2>Em qual dessas áreas você atual?</h2>
+        <h2>Em qual dessas áreas você atua?</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-radio-group v-model="whatArea" @click="nextSlide2" :mandatory="false">
+        <!-- <v-radio-group v-model="whatArea" @click="nextSlide2" :mandatory="false">
           <v-radio label="Radio 3" value="radio-3"></v-radio>
           <v-radio label="Radio 4" value="radio-4"></v-radio>
           <v-radio label="Radio 5" value="radio-5"></v-radio>
           <v-radio label="Radio 6" value="radio-6"></v-radio>
-        </v-radio-group>
+        </v-radio-group>-->
+        <v-btn class="btn_slide2" @click="nextSlide2">Exatas</v-btn>
+        <v-btn class="btn_slide2" @click="nextSlide2">Humanas</v-btn>
+        <v-btn class="btn_slide2" @click="nextSlide2">Biológicas</v-btn>
+        <v-btn class="btn_slide2" @click="nextSlide2">Tecnologia</v-btn>
       </div>
       <!-- SLIDE 3 - MultiSelect -->
-      <div v-show="mostrarSlide3  === true" class="slide slide-3">
+      <div v-show="mostrarSlide3  === true" class="slide slide-3 layout-slides">
         <h2>Selecione as áreas de seu interesse:</h2>
         <!-- <p>{{ selected }}</p> -->
-        <v-checkbox v-model="areas" label="John" value="John"></v-checkbox>
-        <v-checkbox v-model="areas" label="Jacob" value="Jacob"></v-checkbox>
-        <v-checkbox v-model="areas" label="Outro" value="Outro  "></v-checkbox>
-        <v-checkbox v-model="areas" label="Teste" value="Teste"></v-checkbox>
-        <v-checkbox v-model="areas" label="Tas" value="Tas"></v-checkbox>
-        <v-btn @click="nextSlide3">Avançar</v-btn>
+        <v-checkbox v-model="areas" label="Design" class="cb" value="Design"></v-checkbox>
+        <v-checkbox v-model="areas" label="Marketing" class="cb" value="Marketing"></v-checkbox>
+        <v-checkbox
+          v-model="areas"
+          label="Business Intelligence"
+          class="cb"
+          value="Business Intelligence"
+        ></v-checkbox>
+        <v-checkbox v-model="areas" label="UX" class="cb" value="UX"></v-checkbox>
+        <v-checkbox v-model="areas" label="Scrum" class="cb" value="Scrum"></v-checkbox>
+        <v-checkbox v-model="areas" label="Hard Skills" class="cb" value="Hard Skills"></v-checkbox>
+        <v-checkbox v-model="areas" label="Soft Skills" class="cb" value="Soft Skills"></v-checkbox>
+        <v-checkbox v-model="areas" label="Face Ads" class="cb" value="Face Ads"></v-checkbox>
+        <v-btn class="btn_slide1" @click="nextSlide3">Avançar</v-btn>
       </div>
 
       <!-- Data e hora -->
-      <v-layout row wrap v-show="mostrarSlide4  === true" class="slide slide-4">
+      <v-layout row wrap v-show="mostrarSlide4  === true" class="slide slide-4 layout-slides">
         <h2>Quando você gostaria de encontrar seu mentor?</h2>
         <v-flex xs12 sm6 md3>
           <v-text-field label="Data" v-model="pickerDate" placeholder="Data" type="date" outline></v-text-field>
@@ -49,14 +67,15 @@
             type="time"
             outline
           ></v-text-field>
-          <v-btn @click="nextSlide4">Enviar</v-btn>
+          <v-btn class="btn_slide1" @click="nextSlide4">Enviar</v-btn>
         </v-flex>
       </v-layout>
     </v-form>
 
     <!-- form para dados do user -->
     <v-form v-show="mostrarForm  === true" v-model="valid">
-      <v-layout xs12 md4>
+      <v-layout xs12 md4 class="slide-5 layout-slides">
+        <h2>Complete seu cadastro para continuar</h2>
         <v-flex xs12 md4>
           <v-text-field v-model="firstname" :rules="nameRules" :counter="10" label="Nome" required></v-text-field>
         </v-flex>
@@ -85,15 +104,25 @@
         </v-flex>
 
         <v-flex xs12 md4>
-          <v-btn @click="nextSlide5">Enviar</v-btn>
+          <v-text-field v-model="password" :type="'password'" label="Senha" required></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 md4>
+          <v-text-field v-model="password" :type="'password'" label="Confirmação de senha" required></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 md4>
+          <v-btn class="btn_slide1" @click="nextSlide5">Enviar</v-btn>
         </v-flex>
       </v-layout>
     </v-form>
 
-    <!-- campo do cartão de crádito -->
+    <!-- campo do cartão de crédito -->
     <v-form>
-      <v-layout v-show="cardForm  === true" xs12 md4>
+      <v-layout class="slide-6 layout-slides" v-show="cardForm  === true" xs12 md4>
         <h2>FORMA DE PAGAMENTO</h2>
+        <v-btn class="btn_pgto1">Cartão de crédito</v-btn>
+        <v-btn class="btn_pgto2">boleto</v-btn>
         <v-flex xs12 md4>
           <v-text-field
             :rules="nameRules"
@@ -109,7 +138,7 @@
             :rules="nameRules"
             v-model="cardTitle"
             label="Nome do Títular do cartão"
-            placeholder="Nome do Títular dp cartão"
+            placeholder="Nome do Títular do cartão"
             required
           ></v-text-field>
         </v-flex>
@@ -133,7 +162,7 @@
         </v-flex>
 
         <v-flex xs12 md4>
-          <v-btn @click="cadastrar">Enviar</v-btn>
+          <v-btn class="btn_slide1" @click="cadastrar">Enviar</v-btn>
         </v-flex>
       </v-layout>
     </v-form>
@@ -248,9 +277,47 @@ export default {
   background-image: linear-gradient(#005778, #0798d1);
 }
 
-.btn_slides {
+.btn_slide1 {
+  margin: 30px 15px;
   background-color: #0378a6 !important;
   color: white;
+}
+
+.btn_slide2 {
+  margin: 15px 15px;
+}
+
+.cb {
+  width: 150px;
+}
+
+.slide-3 {
+  margin-top: 50px;
+  align-items: center;
+}
+
+.slide-5 {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.slide-6 {
+  margin-top: 50px;
+  padding: 0px 10px;
+}
+
+.btn_pgto1,
+.btn_pgto2 {
+  margin: 1px;
+}
+
+.btn_pgto1 {
+  color: #a3a3a3;
+  margin-top: -15px;
+}
+
+.btn_pgto2 {
+  margin-bottom: 10px;
 }
 /* .class= "rad"; */
 </style>

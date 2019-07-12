@@ -221,18 +221,19 @@ h2 {
   font-size: 25px;
   font-weight: 600;
   color: #005778;
-  margin-bottom: 25px;
+  margin: 40px 10px;
 }
 
 .layout-slides {
+  margin: 100px 0;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  justify-content: initial;
   background: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
-  padding: 100px 1%;
-  margin: 100px 0;
+  /* padding: 100px 1%;
+  margin: 100px 0; */
 }
 
 @media (min-width: 768px) {
