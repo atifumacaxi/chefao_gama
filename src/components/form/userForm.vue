@@ -7,12 +7,10 @@
     <v-form v-show="mostrarFormLead === true">
       <!-- SLIDE 1 -->
       <div v-show="mostrarSlide === true" class="slide slide-1 layout-slides">
-        <h2>Atualmente você quer:</h2>
+        <h2>Atualmente você deseja:</h2>
         <!-- <p>{{ radios || 'null' }}</p> -->
-        <v-radio-group v-model="choose" @click="nextSlide" :mandatory="false">
-          <v-radio label="Radio 1" value="radio-1"></v-radio>
-          <v-radio label="Radio 2" value="radio-2"></v-radio>
-        </v-radio-group>
+        <v-btn class="btn_slides" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
+        <v-btn class="btn_slides" @click="nextSlide">mudar de área de atuação</v-btn>
       </div>
       <!-- SLIDE 2 -->
       <div v-show="mostrarSlide2  === true" class="slide slide-2 layout-slides">
@@ -248,6 +246,11 @@ export default {
 <style scoped>
 .background {
   background-image: linear-gradient(#005778, #0798d1);
+}
+
+.btn_slides {
+  background-color: #0378a6 !important;
+  color: white;
 }
 /* .class= "rad"; */
 </style>

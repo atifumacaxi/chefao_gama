@@ -225,11 +225,14 @@ h2 {
 }
 
 .layout-slides {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
   background: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
-  padding: 20px 6%;
-  margin: 150px 0;
+  padding: 100px 1%;
+  margin: 100px 0;
 }
 
 /* EXEMPLO DE ANIMAÇÕES, CASO FOR USARMOS */
