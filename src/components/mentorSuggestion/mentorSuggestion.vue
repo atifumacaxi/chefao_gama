@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <!-- card de cadastro -->
     <v-layout class="layout-slides card" v-show="success === true">
       <h2>CADASTRO REALIZADO COM SUCESSO!</h2>

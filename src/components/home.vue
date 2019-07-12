@@ -17,7 +17,7 @@ export default {
 
 
 <style scoped>
-@media (max-width: 500px) {
+/* @media (max-width: 500px) { */
   #home {
     flex-direction: column;
     width: 100%;
@@ -49,5 +49,5 @@ export default {
     color: white;
     background-color: #d9471a;
   }
-}
+/* } */
 </style>
