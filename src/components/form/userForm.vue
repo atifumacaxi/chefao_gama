@@ -87,6 +87,54 @@
         </v-flex>
 
         <v-flex xs12 md4>
+          <v-btn @click="nextSlide5">Enviar</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-form>
+
+    <!-- campo do cartão de crádito -->
+    <v-form>
+      <v-layout v-show="cardForm  === true" xs12 md4>
+        <h2>FORMA DE PAGAMENTO</h2>
+        <v-flex xs12 md4>
+          <v-text-field
+            :rules="nameRules"
+            v-model="cardNumber"
+            label="Número do cartão de crédito"
+            required
+            placeholder="0000-0000-0000-0000"
+          ></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 md4>
+          <v-text-field
+            :rules="nameRules"
+            v-model="cardTitle"
+            label="Nome do Títular do cartão"
+            placeholder="Nome do Títular dp cartão"
+            required
+          ></v-text-field>
+        </v-flex>
+        <v-flex xs12 md4>
+          <v-text-field
+            :rules="nameRules"
+            v-model="cardDue"
+            label="Data de validade"
+            required
+            placeholder="MM/AA"
+          ></v-text-field>
+        </v-flex>
+        <v-flex xs12 md4>
+          <v-text-field
+            :rules="nameRules"
+            v-model="cardSafe"
+            label="Código de segurança"
+            required
+            placeholder="000"
+          ></v-text-field>
+        </v-flex>
+
+        <v-flex xs12 md4>
           <v-btn @click="cadastrar">Enviar</v-btn>
         </v-flex>
       </v-layout>
@@ -130,6 +178,11 @@ export default {
         v => !!v || "E-mail é obrigatório",
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
+      cardForm: false,
+      cardNumber: "",
+      cardTitle: "",
+      cardDue: "",
+      cardSafe: "",
       mentorComponent: false
     };
   },
@@ -158,6 +211,10 @@ export default {
         alert("Por favor, preencha todos os campos");
       }
     },
+    nextSlide5() {
+      this.mostrarForm = false;
+      this.cardForm = true;
+    },
     cadastrar() {
       // fazer lógica para verificar se todos os dados estão sendo passados
       const choose = this.choose;
@@ -180,7 +237,7 @@ export default {
         })
         .then(() => {
           // eslint-disable-next-line
-          this.mostrarForm = false;
+          this.cardForm = false;
           this.mentorComponent = true;
         });
     }

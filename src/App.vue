@@ -52,7 +52,7 @@ export default {
 }
 
 .main-container-render {
-  padding: 0px !important;
+  padding: 0px 10px !important;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -228,7 +228,7 @@ h2 {
   background: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
-  padding: 6%;
+  padding: 20px 6%;
   margin: 150px 0;
 }
 

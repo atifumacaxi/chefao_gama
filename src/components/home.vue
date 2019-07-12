@@ -21,7 +21,7 @@ export default {
   #home {
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 600px;
     justify-content: space-evenly;
     background-image: url("imgs/bg-min.png");
     background-position: center;
