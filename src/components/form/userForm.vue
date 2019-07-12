@@ -2,7 +2,7 @@
   <!-- tela com os slides do campo de cadastro. Todos os slides ficaram aqui, inclusive o form.
   para facilitar quando formos usar as informações preenchidas pelo user-->
 
-  <v-container class="background" fluid>
+  <v-container class="background">
     <!-- form para selecionar qualificar lead -->
     <v-form v-show="mostrarFormLead === true">
       <!-- SLIDE 1 -->

@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <Header />
-    <v-content class="main">
+    <div class="main">
       <div class="main-container">
         <router-view class="main-container-render"></router-view>
       </div>
-    </v-content>
+    </div>
   </v-app>
 </template>
 
@@ -47,8 +47,12 @@ export default {
 .main-container-render,
 .main-container,
 .main {
-  height: 600px;
+  height: 100%;
   width: 100%;
+}
+
+.main-container-render {
+  padding: 0px !important;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -225,6 +229,7 @@ h2 {
   border: 1px solid #d1d1d1;
   border-radius: 4px;
   padding: 6%;
+  margin: 150px 0;
 }
 
 /* EXEMPLO DE ANIMAÇÕES, CASO FOR USARMOS */

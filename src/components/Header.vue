@@ -64,7 +64,7 @@ export default {};
 .text-xs-center {
   background-image: url("imgs/logo.png");
   background-position: left;
-  margin-bottom: -20px;
+  /* margin-bottom: -20px; */
   display: block;
   text-align: right !important;
 }

@@ -19,15 +19,15 @@ export default {
 <style scoped>
 @media (max-width: 500px) {
   #home {
-    padding-right: 10px;
-    padding-left: 10px;
     flex-direction: column;
     width: 100%;
-    /*height: 600px;*/
+    height: 100%;
     justify-content: space-evenly;
     background-image: url("imgs/bg-min.png");
     background-position: center;
     background-repeat: no-repeat;
+    padding: 150px 10px;
+    /* mesma margin do layou */
   }
   h1,
   h2 {

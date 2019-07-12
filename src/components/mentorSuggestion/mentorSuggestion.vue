@@ -62,9 +62,8 @@ export default {
     };
   },
   props: {
-    title: String,
-    likes: Number,
-    isPublished: Boolean
+    date: Date,
+    hour: String
   },
   methods: {
     nextSlide() {
