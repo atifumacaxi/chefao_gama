@@ -48,7 +48,7 @@ export default {
 .main-container,
 .main {
   height: 100%;
-  width: 100%;
+  width: 100% !important;
 }
 
 .main-container-render {
@@ -239,12 +239,18 @@ h2 {
 @media (min-width: 768px) {
   h2 {
     font-size: 48px;
+    font-weight: initial;
+  }
+
+  p {
+    font-size: 30px;
   }
 
   .layout-slides {
     padding: 58px;
-    margin-right: 380px;
-    margin-left: 380px;
+    margin-right: 14.5%;
+    margin-left: 14.5%;
+    width: auto;
   }
 }
 
