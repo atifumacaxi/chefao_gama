@@ -225,7 +225,7 @@ h2 {
 }
 
 .layout-slides {
-  margin: 100px 0;
+  margin: 110px 0;
   display: flex;
   flex-direction: column;
   justify-content: initial;

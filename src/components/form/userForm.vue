@@ -125,7 +125,6 @@
         <v-btn class="btn_pgto2">boleto</v-btn>
         <v-flex xs12 md4>
           <v-text-field
-            :rules="nameRules"
             v-model="cardNumber"
             label="Número do cartão de crédito"
             required
@@ -292,7 +291,7 @@ export default {
 }
 
 .slide-3 {
-  margin-top: 50px;
+  margin-top: 80px;
   align-items: center;
 }
 

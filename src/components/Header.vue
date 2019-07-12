@@ -62,8 +62,12 @@ export default {};
 }
 
 .text-xs-center {
-  background-image: url("imgs/logo.png");
-  background-position: left;
+  width: 100%;
+
+  height: 90px;
+  position: fixed;
+  background-image: url("imgs/logo.jpg");
+  background-position: initial;
   /* margin-bottom: -20px; */
   display: block;
   text-align: right !important;

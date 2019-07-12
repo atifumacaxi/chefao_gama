@@ -52,7 +52,7 @@
           <h3 style="font-size: 18px !important;">{{ mentor.name}}</h3>
         </h4>
 
-        <h4>{{ date}} Às {{hour}}</h4>
+        <!--  <h4>{{date}} Às {{hour}}</h4> -->
 
         <v-btn to="/" class="btn lar" @click="profileMentor">MEU PERFIL!</v-btn>
       </div>
@@ -71,10 +71,10 @@ export default {
         name: "Lucas Ferreira",
         cargo: "Ux Designer Pleno na Netshoes",
         photo:
-          "http://varelanoticias.com.br/wp-content/uploads/2017/08/sidney-magal.jpg",
+          "https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=815&q=80",
         tags: ["Design Thinking", "Scrum", "Agile"],
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+          "Experiente na área de vendas e contato com cliente. Já passei por três multinacionais e também duas startups. Agrego valor diariamente nas decisões de criação de novos projetos ágeis, além de participar do processo de criação de novos serviços."
       },
       mentorMatch: false,
       date: "29/07/2019",
@@ -119,6 +119,7 @@ export default {
 }
 
 .card {
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
