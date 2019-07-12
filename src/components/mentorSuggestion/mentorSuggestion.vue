@@ -40,6 +40,23 @@
       </div>
       <v-btn class="btn lar" @click="match">QUERO RESERVAR!</v-btn>
     </v-layout>
+
+    <!-- mentor match -->
+    <v-layout class="layout-slides card" v-show="mentorMatch === true">
+      <h2>Encontramos o mentor ideal para você!</h2>
+      <div class="mentor">
+        <img class="mentor-detail-img" :src="mentor.photo" :alt="`mentor sugerido: ${mentor.name}`" />
+
+        <h4>
+          Você reservou uma sessão com
+          <h3 style="font-size: 18px !important;">{{ mentor.name}}</h3>
+        </h4>
+
+        <h4>{{ date}} Às {{hour}}</h4>
+
+        <v-btn to="/" class="btn lar" @click="profileMentor">MEU PERFIL!</v-btn>
+      </div>
+    </v-layout>
   </v-container>
 </template>
 
@@ -58,9 +75,13 @@ export default {
         tags: ["Design Thinking", "Scrum", "Agile"],
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-      }
+      },
+      mentorMatch: false,
+      date: "29/07/2019",
+      hour: "13:30"
     };
   },
+
   props: {
     date: Date,
     hour: String
@@ -79,6 +100,11 @@ export default {
     match() {
       // eslint-disable-next-line
       console.log("reservado");
+      this.mentorSuggestion = false;
+      this.mentorMatch = true;
+    },
+    profileMentor() {
+      console.log("Consultar perfil");
     }
   }
 };

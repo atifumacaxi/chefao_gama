@@ -232,6 +232,18 @@ h2 {
   margin: 150px 0;
 }
 
+@media (min-width: 768px) {
+  h2 {
+    font-size: 48px;
+  }
+
+  .layout-slides {
+    padding: 58px;
+    margin-right: 380px;
+    margin-left: 380px;
+  }
+}
+
 /* EXEMPLO DE ANIMAÇÕES, CASO FOR USARMOS */
 @keyframes slide-in {
   from {
