@@ -295,6 +295,7 @@ export default {
           pickerDate,
           pickerHour,
           firstname,
+          lastname,
           email
         })
         .then(() => {
