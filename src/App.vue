@@ -36,7 +36,8 @@ export default {
 }
 
 #app,
-.main-container-render,
+.main-container-render {
+}
 .main-container,
 .main {
   display: flex;
@@ -45,7 +46,11 @@ export default {
 }
 
 .main-container-render,
-.main-container,
+.main-container {
+  height: 100%;
+  width: 100% !important;
+}
+
 .main {
   height: 100%;
   width: 100% !important;
@@ -225,7 +230,7 @@ h2 {
 }
 
 .layout-slides {
-  margin: 110px 0;
+  margin: 60px 0;
   display: flex;
   flex-direction: column;
   justify-content: initial;

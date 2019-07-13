@@ -13,8 +13,6 @@
           <v-radio label="Radio 1" value="radio-1"></v-radio>
           <v-radio label="Radio 2" value="radio-2"></v-radio>
         </v-radio-group>-->
-
-        <!-- <p>{{ radios || 'null' }}</p> -->
         <div class="items_inside">
           <v-btn class="btn_slide1" @click="nextSlide">iniciar no mercado de trabalho</v-btn>
           <v-btn class="btn_slide1" @click="nextSlide">mudar de área de atuação</v-btn>
@@ -39,21 +37,22 @@
       </div>
       <!-- SLIDE 3 - MultiSelect -->
       <div v-show="mostrarSlide3  === true" class="slide slide-3 layout-slides">
-        <h2>Selecione as áreas de seu interesse:</h2>
-        <!-- <p>{{ selected }}</p> -->
-        <v-checkbox v-model="areas" label="Design" class="cb" value="Design"></v-checkbox>
-        <v-checkbox v-model="areas" label="Marketing" class="cb" value="Marketing"></v-checkbox>
-        <v-checkbox
-          v-model="areas"
-          label="Business Intelligence"
-          class="cb"
-          value="Business Intelligence"
-        ></v-checkbox>
-        <v-checkbox v-model="areas" label="UX" class="cb" value="UX"></v-checkbox>
-        <v-checkbox v-model="areas" label="Scrum" class="cb" value="Scrum"></v-checkbox>
-        <v-checkbox v-model="areas" label="Hard Skills" class="cb" value="Hard Skills"></v-checkbox>
-        <v-checkbox v-model="areas" label="Soft Skills" class="cb" value="Soft Skills"></v-checkbox>
-        <v-checkbox v-model="areas" label="Face Ads" class="cb" value="Face Ads"></v-checkbox>
+        <div class="slide-3-cb">
+          <h2>Selecione as áreas de seu interesse:</h2>
+          <v-checkbox v-model="areas" label="Design" class="cb" value="Design"></v-checkbox>
+          <v-checkbox v-model="areas" label="Marketing" class="cb" value="Marketing"></v-checkbox>
+          <v-checkbox
+            v-model="areas"
+            label="Business Intelligence"
+            class="cb"
+            value="Business Intelligence"
+          ></v-checkbox>
+          <v-checkbox v-model="areas" label="UX" class="cb" value="UX"></v-checkbox>
+          <v-checkbox v-model="areas" label="Scrum" class="cb" value="Scrum"></v-checkbox>
+          <v-checkbox v-model="areas" label="Hard Skills" class="cb" value="Hard Skills"></v-checkbox>
+          <v-checkbox v-model="areas" label="Soft Skills" class="cb" value="Soft Skills"></v-checkbox>
+          <v-checkbox v-model="areas" label="Face Ads" class="cb" value="Face Ads"></v-checkbox>
+        </div>
         <v-btn class="btn_slide1" @click="nextSlide3">Avançar</v-btn>
       </div>
 
@@ -112,7 +111,12 @@
         </v-flex>
 
         <v-flex xs12 md4>
-          <v-text-field v-model="password" :type="'password'" label="Confirmação de senha" required></v-text-field>
+          <v-text-field
+            v-model="passwordTrue"
+            :type="'password'"
+            label="Confirmação de senha"
+            required
+          ></v-text-field>
         </v-flex>
 
         <v-flex xs12 md4>
@@ -169,7 +173,11 @@
         </v-flex>
       </v-layout>
     </v-form>
-    <mentorSuggestion v-show="mentorComponent === true" />
+    <mentorSuggestion
+      :dateMatch="new Date(pickerDate)"
+      :hourMatch="pickerHour"
+      v-show="mentorComponent === true"
+    />
   </v-container>
 </template>
 
@@ -190,7 +198,7 @@ export default {
       mostrarSlide3: false,
       areas: [],
       mostrarSlide4: false,
-      pickerDate: new Date().toISOString().substr(0, 10), //é preciso converter pra pt-BR .toLocaleDateString("pt-BR")
+      pickerDate: "", //é preciso converter pra pt-BR .toLocaleDateString("pt-BR")
       pickerHour: null,
       mostrarSlide5: false,
       //   dados dos user
@@ -208,6 +216,8 @@ export default {
         v => !!v || "E-mail é obrigatório",
         v => /.+@.+/.test(v) || "E-mail must be valid"
       ],
+      password: "",
+      passwordTrue: "",
       cardForm: false,
       cardNumber: "",
       cardTitle: "",
@@ -242,17 +252,39 @@ export default {
       }
     },
     nextSlide5() {
-      this.mostrarForm = false;
-      this.cardForm = true;
+      if (
+        this.firstname &&
+        this.lastname &&
+        this.email &&
+        this.emailValidation &&
+        this.password &&
+        this.passwordTrue
+      ) {
+        if (
+          this.password !== this.passwordTrue ||
+          this.email !== this.emailValidation
+        ) {
+          this.password !== this.passwordTrue
+            ? alert("A senhas digitadas não conferem :(")
+            : alert("Os e-mails digitados não conferem :(");
+        } else {
+          this.mostrarForm = false;
+          this.cardForm = true;
+        }
+      } else {
+        alert("Pro favor, preencha todos os campos");
+      }
     },
     cadastrar() {
-      // fazer lógica para verificar se todos os dados estão sendo passados
+      this.cardFormValidation();
+
       const choose = this.choose;
       const whatArea = this.whatArea;
       const areas = this.areas;
       const pickerDate = this.pickerDate;
       const pickerHour = this.pickerHour;
       const firstname = this.firstname;
+      const lastname = this.lastname;
       const email = this.email;
 
       this.$http
@@ -270,6 +302,9 @@ export default {
           this.cardForm = false;
           this.mentorComponent = true;
         });
+    },
+    cardFormValidation() {
+      // fazer lógica para verificar se todos os dados estão sendo passados
     }
   }
 };
@@ -309,19 +344,40 @@ export default {
 .items_inside {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .btn_slide2 {
-  margin: 15px 15px;
+  /* margin: 15px 15px; */
+  width: 150px;
 }
 
-.cb {
+/* .cb {
   width: 150px;
+} */
+
+.slide-2 {
+  padding: 20px;
 }
 
 .slide-3 {
   margin-top: 80px;
+}
+
+.slide-3-cb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+  padding-left: 10px;
+}
+
+.cb {
+  width: 50%;
+}
+
+.slide-4 {
+  padding: 0 20px;
 }
 
 .slide-5 {

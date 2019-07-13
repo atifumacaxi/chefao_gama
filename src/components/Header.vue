@@ -36,13 +36,14 @@ export default {};
         </v-btn>
       </template>
       <v-list class="menu_list">
-        <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
+        <!-- as rotas serão criadas -->
+        <v-btn flat href="/" target="_blank">
           <span class="mr-2">Acessar</span>
         </v-btn>
-        <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
+        <v-btn flat href="/" target="_blank">
           <span class="mr-2">Como funciona</span>
         </v-btn>
-        <v-btn flat href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank">
+        <v-btn flat href="/" target="_blank">
           <span class="mr-2">Planos</span>
         </v-btn>
       </v-list>
@@ -56,6 +57,7 @@ export default {};
 
 <style>
 .menu_list {
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
   align-content: flex-end;
@@ -64,8 +66,8 @@ export default {};
 .text-xs-center {
   width: 100%;
 
-  height: 90px;
-  position: fixed;
+  /* height: 90px;
+  position: fixed; */
   background-image: url("imgs/logo.jpg");
   background-position: initial;
   /* margin-bottom: -20px; */

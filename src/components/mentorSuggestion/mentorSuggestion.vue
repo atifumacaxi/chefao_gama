@@ -52,7 +52,7 @@
           <h3 style="font-size: 18px !important;">{{ mentor.name}}</h3>
         </h4>
 
-        <!--  <h4>{{date}} Às {{hour}}</h4> -->
+        <h4>{{dateMatch | complete}} Às {{hourMatch}}</h4>
 
         <v-btn to="/" class="btn lar" @click="profileMentor">MEU PERFIL!</v-btn>
       </div>
@@ -76,15 +76,19 @@ export default {
         description:
           "Experiente na área de vendas e contato com cliente. Já passei por três multinacionais e também duas startups. Agrego valor diariamente nas decisões de criação de novos projetos ágeis, além de participar do processo de criação de novos serviços."
       },
-      mentorMatch: false,
-      date: "29/07/2019",
-      hour: "13:30"
+      mentorMatch: false
+      // date: "29/07/2019",
+      // hour: "13:30"
     };
   },
-
+  filters: {
+    complete(value) {
+      return value.toLocaleDateString("pt-BR");
+    }
+  },
   props: {
-    date: Date,
-    hour: String
+    dateMatch: Date,
+    hourMatch: String
   },
   methods: {
     nextSlide() {
